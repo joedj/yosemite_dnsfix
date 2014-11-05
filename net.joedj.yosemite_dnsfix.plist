@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>yosemite_dnsfix</string>
+        <key>UserName</key>
+        <string>root</string>
+        <key>GroupName</key>
+        <string>wheel</string>
+        <key>WorkingDirectory</key>
+        <string>/opt/yosemite_dnsfix</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/usr/bin/twistd</string>
+            <string>--uid=_mdnsresponder</string>
+            <string>--gid=_mdnsresponder</string>
+            <string>--nodaemon</string>
+            <string>--logfile=/dev/null</string>
+            <string>yosemite_dnsfix</string>
+            <string>--interface=127.0.0.1</string>
+            <string>--recursive</string>
+            <string>--search-domain=.example.com</string>
+        </array>
+        <key>KeepAlive</key>
+        <true/>
+    </dict>
+</plist>
