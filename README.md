@@ -1,6 +1,16 @@
 yosemite_dnsfix
 ===============
 
+> Yosemite update 10.10.1+
+> -----------------------
+> With the release of 10.10.1, Apple has added the `--AlwaysAppendSearchDomains` argument to
+> `/usr/libexec/discoveryd`, so you can add this to `/System/Library/LaunchDaemons/com.apple.discoveryd.plist`.
+> You may find that this works well enough that you no longer need `yosemite_dnsfix`, although
+> `yosemite_dnsfix` can still be used to support search domains resolution like `.prod` -> `.prod.example.com`
+> now that `.prod` has become a TLD.
+> `yosemite_dnxfix` may also be faster than `--AlwaysAppendSearchDomains`, as it doesn't wait for the unqualified
+> resolution to fail before appending the search domain.
+
 With the release of OS X 10.10 Yosemite, it appears those no good bush whackin’ barracudas at Apple
 have put the final nail in the coffin of their crippled DNS search domain functionality.
 
