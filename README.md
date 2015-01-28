@@ -1,6 +1,16 @@
 yosemite_dnsfix
 ===============
 
+> Yosemite update 10.10.2
+> -----------------------
+> I've had reports that the 10.10.2 update again breaks DNS by removing `--AlwaysAppendSearchDomains` from
+> `/System/Library/LaunchDaemons/com.apple.discoveryd.plist`.  If you want to fix it, just re-add the argument
+> and reload discoveryd, using e.g.
+> ```bash
+> sudo launchctl unload /System/Library/LaunchDaemons/com.apple.discoveryd.plist
+> sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.discoveryd.plist
+> ```
+
 > Yosemite update 10.10.1+
 > -----------------------
 > With the release of 10.10.1, Apple has added the `--AlwaysAppendSearchDomains` argument to
